@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='calculatorStyles.css' rel='stylesheet' type='text/css'>
+
+  <script src="calculatorConsoleErrorNew.js"></script>
+  <script src="calculatorConsoleClassOperations.js"></script>
+  <script src="calculatorConsoleClassCalculator.js"></script>
+  <script src="calculatorConsoleClassExpressions.js"></script>
+  
+  <script src='memory.js'></script>
+  <script src='calculatorDOM.js'></script>
+  <script src='calculatorDOMOptions.js'></script>
+
+
+  </head>
+  <body>
+  <div id='calc'></div>
+    <script>
+    let container = document.getElementById('calc');
+
+    let calculator = new Calc(calcOptions);
+    container.appendChild(calculator.getElem());
+    let memory = calculator.getMemoryPanel();
+    document.querySelector('.calc-buttons-board').appendChild(memory);
+    let history = calculator.getHistoryPanel();
+
+    container.appendChild(history);
+
+    </script>
+  </body>
+</html>
